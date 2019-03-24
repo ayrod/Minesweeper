@@ -1,6 +1,7 @@
 <html><body id="body">
 <h3 style="text-align: center; margin:0">4D Minesweeper</h3>
-<p style="text-align: center; margin:0">Like a normal Minesweeper, except each box has a hypercube of 80 neighbours (highlighted in blue).</p>
+<p style="text-align: center; margin:0">Like a normal Minesweeper, except 
+	each box has a hypercube of 80 neighbours (highlighted in blue).</p>
 <table id="field"></table>
 <div id="menu">
 	<div id="bombCounter"></div>
@@ -114,7 +115,9 @@ function makeTable(parent){
 		for(j=0; j<dim[1]; j++){
 			txt+="<td><div id='row"+i+j+"' oncontextmenu='return false;'>"
 			for(k=0; k<dim[2]*dim[3]; k++){
-				txt+="<input type='button' id="+buttonId+" value=' ' style='width: 25px; height: 25px; margin: 0px' onmousedown='mouseClic("+buttonId+", event)' oncontextmenu='return false;'/>";
+				txt+="<input type='button' id="+buttonId
+					+" value=' ' style='width: 25px; height: 25px; margin: 0px' onmousedown='mouseClic("
+					+buttonId+", event)' oncontextmenu='return false;'/>";
 				buttonId+=1
 			}
 			txt+="</div></td>"
