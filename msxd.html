@@ -5,6 +5,7 @@
 <table id="field"></table>
 <div id="menu">
 	<div id="bombCounter"></div>
+	<div id="deathCounter">Unharmed... for now.</div>
 	<div id="timer"></div>
 	<div id="won"></div>
 	<input type='button' value='Restart' onClick='restart()'/>
@@ -184,6 +185,14 @@ function updateWarnings(indice){
 	}
 }
 
+function updateDeaths(){
+	deathCounterText="Unharmed... for now."
+	if(exploded>0){
+		deathCounterText="You exploded "+exploded+" times."
+	}
+	document.getElementById("deathCounter").innerHTML=deathCounterText
+}
+
 // click functions
 function mouseClic(id, event){
 	if(started==0){
@@ -245,6 +254,7 @@ function reveal(target){
 		updateBombsFound(1)
 		square.value="*"
 		exploded+=1
+		updateDeaths()
 	}
 	else if(warnings[target]==0){
 		if(square.style.backgroundColor!=bgColors[1]){
@@ -329,6 +339,7 @@ function restart(){
 	updateBombsFound(0)
 	started=0
 	exploded=0
+	updateDeaths()
 	time=0
 	document.getElementById("timer").style.color=bgc
 	document.getElementById("timer").innerHTML="0"
