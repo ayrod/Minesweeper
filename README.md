@@ -1,5 +1,5 @@
 # 4D Minesweeper
-How to use:
+How to use:<br>
 Simply download msxd.html and open it in Chrome.
 
 How to play:<br>
